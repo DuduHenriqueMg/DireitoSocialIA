@@ -2,16 +2,18 @@ from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from crewai.knowledge.source.pdf_knowledge_source import PDFKnowledgeSource
 
+
 pdf_tool = PDFKnowledgeSource(file_paths=["constituicao.pdf", "direitos_fundametais_sociais.pdf", "regime_direito_social.pdf"])
 
 llm = LLM(
-    model="openai/gpt-4o-mini",
+    model="openai/gpt-4-turbo",
     temperature=0,
     max_tokens=1500,
 )
 
 @CrewBase
 class DireitoCrew:
+    
     agents_config = "../config/agents.yaml"
     tasks_config = "../config/tasks.yaml"
 

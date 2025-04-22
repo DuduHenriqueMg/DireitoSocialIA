@@ -28,4 +28,4 @@ if st.button("Executar pergunta 🚀"):
 
         # Display the AI response
         st.subheader("✅ Resposta da IA:")
-        st.write(result)
+        st.markdown(result)
